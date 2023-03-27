@@ -1,71 +1,70 @@
-# cs5260_ai
+# CS 5260 - Artificial Intelligence
+This repository contains the Project requirements for Artificial Intelligence class in Spring 2023 for the 
+MS. of Computer Science program of Vanderbilt University.
 
-## Requirements
-- must use csv files to load resources
-- use singleton transfer for part 1 only
-  - treat transfer options as if transfering one at a time
-  - transfer one good at a time
-- state quality function
-  - heuristic to decide how good/bad a state is
-  - state - # of resources a country has
-- resource utility weighing
-  - resource weights on how a country values it state quality
-  - for part 1, all resource weights are static and shared by all countries
-
-- expected utility
-  - aka evaluation value, or f-value
-  - how and what order items are added to frontier in various search strategies
-  - follows directly from state quality function and resource utility weights
-  - reward country receives by getting into its target state
-
-- undiscounted reward function
-  - diff between state quality (of any given state of a country) and the initial state quality of the country
-    - `state_quality_future` - `initial_state_quality`
-- discounted reward function
-  - penalize undiscounted reward based on how long it takes for a country to get into its specified state
-  - to-do play around with gamma value in formula
-
-- country accept probability
-  - probability that a different country will accept the cumulative set of transfers proposed to it
-  - uses `logistic function` formula
-    - to-do play with vals `k`, `x`
-  - involves individual country will accept transfer proposal by another country
-
-- schedule success probability
-  - probability that all countries will accept the whole set of schedule ()
-  - combines all results in a single probability that the schedule will succeed
-    - 
-
-- input csv files
-  - all manufactured resources must have values of 0 to start
-  - only raw resources will have values to start
-
-- output must be csv text file containing:
-  - sequence of **grounded** transfer and transform ops
-    - grounded - no variables remaining, only constants parsed out
-
-- top level func `country_scheduler`
-  - `depth_bound` param - dictates how many ops agent is searching for in the schedule
+by: Kevin Offemaria
 
 
-### Suggestions for getting started
-- Decide on a State Quality function for your agent
-- Create your State representation in code
-- Come up with your initial listing of all available resources, weights, and the initial world state
-- Write code to calculate the State Quality, rewards, and success probabilities for a given country and schedule
-- Write code to calculate the Expected Utility of a given schedule
-- Write code to parse TRANSFORM operators into Actions in your code
-- Write code to expand a current State into a set of possible next States given a set of possible Actions (along with their prerequisites)
-- Fine-tune your code
-    - Pre-shrink any variable domains using the GAC algorithm 
-    - Implement different search strategies
-    - Add more resources and/or transformation operators
-    - Play with the Expected Utility gamma, k, and x0 values
-    - Try sorting any priority queues on different values
-- Don’t create too many countries or resources initially 
-    - Increases branching factor
-- Carefully read through the Programming Project section entitled “Search Strategy” for more explicit suggestions for getting started on Part 1
-- Ignore the “Deliverables” section for now
-- Take a look at my sample Python code base on GitHub for ideas of how to get started implementing different search strategies in a generalized fashion
+## Project Requirements
+The project requirements and relevant information are found in the directory: 
+[project_reqs](project_reqs).
+
+For the required project submission documents, see dir: [submission_files](submission_files).
+- `test_cases_summary.pdf`
+- `talk_slides.pptx`
+- `video_link.txt`
+
+## Usage
+### Installation
+To install the project requirements:
+
+```bash
+# install python virtual environment
+pyenv virtualenv 3.10.1 venv_name
+pyenv activate venv_name
+
+# install reqs file
+pip install -r requirements.txt
+```
+
+### Running the Program
+The main program is the `country_scheduler.py`. Many of the arguments have default values, so you may invoke the module
+without passing any parameters.
+Run this from the top level directory as follows:
+
+```bash
+# run with default args
+python src/country_scheduler.py
+
+# run with custom args
+python src/country_scheduler.py 
+  --country-self NewCaliforniaRepublic 
+  --resource-file src/input_files/world_resources_1.csv
+  --state-file src/input_files/world_state_1.csv
+  --output-file src/output_files/bfs_results
+  --num-schedules 10
+  --depth-bound 10
+  --frontier-size 5000
+  --loglevel INFO
+```
+
+## Around the repo
+1. Test Results are found in the [output_files](src/output_files)
+   - The last few characters of the file name indicate the test case and iteration (eg. `bfs_res...test1a.txt`)
+2. Initial states are found in [input_files](src/input_files)
 
 
+## Presentation Notes
+1. At first, I embedded the `ActionTransfer` functions (now a class) into the WorldSearch. But realized it could be too
+tightly coupled, and figured I could use this on its own somehow on Part 2 of the project.
+2. Adding a hardcoded transfer percentage of up to 20% of resources
+   - this would cause uneven trades if 1 resource is much higher than the other
+   - to balance, add a check that resources for transfer shouldn't be > 200% both ways
+3. higher COST_OF_FAILURE lead to finding_best nodes in deeper depths
+
+### Notes
+Logical function variables:
+- `x` is the input or independent variable
+- `L` is the maximum value of the function
+- `k` is the steepness of the curve
+- `x_0` is the x-value of the sigmoid's midpoint
