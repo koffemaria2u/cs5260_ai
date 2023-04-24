@@ -44,7 +44,7 @@ class WorldSearch:
         self.frontier_max_size = frontier_max_size          # max amount of nodes on the frontier
         self.num_output_schedules = num_output_schedules    # max number of schedules
         self.logger = logger                    # logger
-        self.search_type = search_type
+        self.search_type = search_type          # indicates search type to be used
         self.frontier = self.init_frontier()    # sets up the frontier
         self.best_node_eu = (0, root_node)  # to start, the best node is the root/parent node
         self.best_schedule_list = []
@@ -55,7 +55,6 @@ class WorldSearch:
         self.node_count_id = root_node.node_id  # keeps track of node count and use as an ID; includes root node
         self.world_population = self.compute_world_resource("Population")   # currently unused
         self.world_electronics = self.compute_world_resource("Electronics") # currently unused
-        self.recycled_electronics = 0
 
     def compute_world_resource(self, resource_type):
         """
@@ -98,14 +97,14 @@ class WorldSearch:
     def hdfs_search(self):
         """
         NEW FEAT 5
-        Heuristic Depth-First Search algorithm w/ reached.
+        Heuristic Depth-First Search algorithm
         To prevent searching down nodes with bad EU scores, the agent prunes the lower scored nodes and only takes
         the top 2 nodes (shuffled) to append on the frontier.
             source: https://www.youtube.com/watch?v=pcKY4hjDrxk&t=730s
         """
         visited = set()
-        while self.successor_child_count <= self.frontier_max_size or self.current_depth > self.max_depth:
-            # on the latest set of appended nodes, pop the node with the highest EU score
+        while (self.successor_child_count <= self.frontier_max_size or self.current_depth > self.max_depth) and self.frontier:
+            # on the latest set of appended nodes, pop the last inserted node  from the frontier (LIFO)
             eu_score, current_node = self.frontier.pop()
             # print(f"{eu_score}, node_id {current_node.node_id}")
 
@@ -143,6 +142,7 @@ class WorldSearch:
                 child_node_count = find_schedule_info(child_node, find_successor_count=True)
                 self.current_depth = max(self.current_depth, child_node_count)
 
+            # DO NOT USE!! introduces human intuition
             # Prune the lowest scores
             # sort highest to lowest; take best 2 scores; shuffle and insert to frontier
             # temp_child_node_successors.sort(reverse=True)
@@ -154,14 +154,65 @@ class WorldSearch:
             self.frontier.extend(temp_child_node_successors)
 
         plot_results(output=self.best_schedule_list, output_file=self.output_schedule_plotfile)
-        write_summary_file(output_file=self.output_schedule_filename, iam_country=self.iam_country,
-                           best_eu_score=self.best_node_eu[0], schedule_count=self.schedule_count,
-                           node_count=self.node_count_id)
+        write_summary_file(output_file=self.output_schedule_filename, best_eu_score=self.best_node_eu[0],
+                           schedule_count=self.schedule_count, node_count=self.node_count_id, node=self.best_node_eu[1])
         self.logger.info(f"HDFS complete! Check resuls in file: {self.output_schedule_filename}")
         return self.best_node_eu, self.current_depth, self.node_count_id, self.schedule_count
 
     def bfs_search(self):
-        pass
+        """
+        NEW FEAT 6
+        Heuristic Depth-First Search algorithm
+            source: https://www.youtube.com/watch?v=pcKY4hjDrxk&t=252s
+        """
+        visited = set()
+        while (self.successor_child_count <= self.frontier_max_size or self.current_depth > self.max_depth) and self.frontier:
+            # on the latest set of appended nodes, pop the node from the front of the frontier (FIFO)
+            eu_score, current_node = self.frontier.pop(0)
+            # print(f"{eu_score}, node_id {current_node.node_id}")
+
+            # helps limit the depth of schedules to the max depth arg
+            sched_count_depth = find_schedule_info(current_node, find_successor_count=True)
+            if sched_count_depth >= self.max_depth:
+                continue
+
+            # check the current score against the best score found so far
+            if current_node.iam_country == self.iam_country and current_node not in visited:
+                self.evaluate_best_score(eu_score=eu_score, current_node=current_node)
+            else:
+                continue
+
+            visited.add(current_node)
+
+            # if there's no child nodes, generate successors of your current node
+            child_node_successors = self.create_child_nodes(parent_node=current_node)
+            self.successor_child_count += len(child_node_successors)
+
+            # evaluate EU scores all children nodes generated
+            temp_child_node_successors = []
+            for child_node in child_node_successors:
+                if child_node is None:
+                    continue
+
+                # calculate EU score; insert child into current node
+                eu_score = self.expected_utility(child_node)
+                current_node.insert_child_node(child_node)
+
+                # append score and node to temp list
+                temp_child_node_successors.append((eu_score, child_node))
+
+                # update the current depth
+                child_node_count = find_schedule_info(child_node, find_successor_count=True)
+                self.current_depth = max(self.current_depth, child_node_count)
+
+            random.shuffle(temp_child_node_successors)
+            self.frontier.extend(temp_child_node_successors)
+
+        plot_results(output=self.best_schedule_list, output_file=self.output_schedule_plotfile)
+        write_summary_file(output_file=self.output_schedule_filename, best_eu_score=self.best_node_eu[0],
+                           schedule_count=self.schedule_count, node_count=self.node_count_id, node=self.best_node_eu[1])
+        self.logger.info(f"HDFS complete! Check resuls in file: {self.output_schedule_filename}")
+        return self.best_node_eu, self.current_depth, self.node_count_id, self.schedule_count
 
     def gbfs_search(self):
         """
@@ -176,6 +227,7 @@ class WorldSearch:
             # source: https://stackoverflow.com/questions/15124097/priority-queue-with-higher-priority-first-in-python
             # not converting to negative fails the program
             eu_score = -eu_score
+            # print(eu_score)
 
             # helps limit the depth of schedules to the max depth arg
             sched_count_depth = find_schedule_info(current_node, find_successor_count=True)
@@ -211,9 +263,8 @@ class WorldSearch:
 
         self.logger.info(f"GBFS complete! Check resuls in file: {self.output_schedule_filename}")
         plot_results(output=self.best_schedule_list, output_file=self.output_schedule_plotfile)
-        write_summary_file(output_file=self.output_schedule_filename, iam_country=self.iam_country,
-                           best_eu_score=self.best_node_eu[0], schedule_count=self.schedule_count,
-                           node_count=self.node_count_id)
+        write_summary_file(output_file=self.output_schedule_filename, best_eu_score=self.best_node_eu[0],
+                           schedule_count=self.schedule_count, node_count=self.node_count_id, node=self.best_node_eu[1])
         return self.best_node_eu, self.current_depth, self.node_count_id, self.schedule_count
 
     def evaluate_best_score(self, eu_score, current_node):
@@ -222,7 +273,7 @@ class WorldSearch:
         if best score, then write templates of all associated upstream nodes
         """
         if eu_score > self.best_node_eu[0]:
-            self.logger.info(f"found higher score: {eu_score}")
+            self.logger.info(f"found higher score: {eu_score}; node_id: {current_node.node_id}; sched#: {self.schedule_count}")
             self.best_node_eu = (eu_score, current_node)
             self.best_schedule_list.append((eu_score, current_node))
             if self.schedule_count <= self.num_output_schedules:
@@ -277,7 +328,7 @@ class WorldSearch:
                               ]
 
         # set a random percentage between 10% to 30% for transferring resources
-        transfer_percentage = random.uniform(0.1, 0.3)
+        transfer_percentage = random.uniform(0.1, 0.2)
 
         # similar to previous loop, but for resources
         for resource in transfer_resources:
@@ -313,7 +364,8 @@ class WorldSearch:
                                   action=action_transfer.write_transfer_template(),
                                   your_country_name=self.iam_country,
                                   node_count_id=self.node_count_id,
-                                  frontier_max_size=self.frontier_max_size
+                                  frontier_max_size=self.frontier_max_size,
+                                  transfer_target_country=target_country_transfer
                                   )
                 child_nodes.append(child_node)
 
@@ -353,12 +405,33 @@ class WorldSearch:
                 K = affects curve steepness
         Logistic function source: https://en.wikipedia.org/wiki/Logistic_function
         """
+        schedule_success_probability_result = 1
+        if not node.action:
+            return schedule_success_probability_result
+        elif "TRANSFER" in node.action and node.transfer_target_node:
+            # DR(c_i, sch_j)
+            x_self = self.discounted_reward(node)
+            x_target = self.discounted_reward(node.transfer_target_node)
+
+            # TODO 4/23 play with constants to get %s
+            exponent_self = (-K * (x_self - X_0))
+            power_self = math.e ** exponent_self
+            exponent_target = (-K * (x_target - X_0))
+            power_target = math.e ** exponent_target
+            schedule_success_probability_self_country = float(L / 1 + power_self)
+            schedule_success_probability_target_country = float(L / 1 + power_target)
+
+            # P(sch_j)
+            pre_res = schedule_success_probability_self_country * schedule_success_probability_target_country
+            schedule_success_probability_result *= pre_res
+
         # DR(c_i, sch_j)
         x = self.discounted_reward(node)
 
         # P(sch_j)
         schedule_success_probability_result = L / 1 + np.exp(-K * (x - X_0))
 
+        # print(schedule_success_probability_result)
         return schedule_success_probability_result
 
     def discounted_reward(self, node):
@@ -411,12 +484,18 @@ class WorldSearch:
 
         # State Quality is always counted against the "self" country
         iam_country = node.invoke_get_country()
+
+        # assume that each person can handle/own 2 electronics at a time
         e_per_person = 2
         electronics_population_ratio = math.ceil(iam_country["Population"] * e_per_person)
-        h_threshold = 1.25  # set to 1 for now
+
+        # assume it is optimal for 4 people to live in a single housing
+        h_threshold = 1.25
         h_per_person = 4
+        ideal_housing_population_ratio = math.ceil(iam_country["Population"] / h_per_person)
+
         for resource_name, resource_amount in iam_country.items():
-            # reset this everytime
+            # reset this everytime because it's used by multiple resources
             e_threshold = 1.5
             # exclude from processing Country as a resource
             if resource_name == "Country":
@@ -425,12 +504,9 @@ class WorldSearch:
             elif resource_name == "Housing":
                 resource_weight = self.resource_list.get(resource_name)["weight"]
 
-                # NEW FEAT 3: improve SQ complexity
-                # if producing too much electronics against world population, penalize
-                # assume that each person can handle/own 2 electronics at a time
-                housing_population_ratio = math.ceil(iam_country["Population"] / h_per_person)
-                if resource_amount > housing_population_ratio:
-                    # apply Electronics threshold to discourage acquiring more electronics
+                # if the housing to population ratio is considered optimal, penalize
+                if resource_amount > ideal_housing_population_ratio:
+                    # apply Housing threshold to discourage building more housing than needed
                     h_threshold = 0.33
 
                 h_sub_score = resource_weight * resource_amount * h_threshold
@@ -469,9 +545,7 @@ class WorldSearch:
                 discount_unbuilt_electronics = 0.5
                 unbuilt_electronics_score = raw_materials_to_produce_electronics * discount_unbuilt_electronics
 
-                # NEW FEAT 3: improve SQ complexity
                 # if producing too much electronics against world population, penalize
-                # assume that each person can handle/own 2 electronics at a time
                 if resource_amount > electronics_population_ratio:
                     # apply Electronics threshold to discourage acquiring more electronics
                     e_threshold = 0.33

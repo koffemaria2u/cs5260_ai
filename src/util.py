@@ -49,7 +49,7 @@ def write_file(output_file, output_string):
     output_file.close()
 
 
-def write_summary_file(output_file, iam_country, best_eu_score, schedule_count, node_count):
+def write_summary_file(output_file, best_eu_score, schedule_count, node_count, node):
     """
     Utility function to summarize the schedules on the finalized output file
     """
@@ -61,16 +61,23 @@ def write_summary_file(output_file, iam_country, best_eu_score, schedule_count, 
     # Count the occurrences of 'TRANSFORM' and 'TRANSFER'
     transform_count = file_contents.count('TRANSFORM')
     transfer_count = file_contents.count('TRANSFER')
+    iam_country = node.world_state.get_country(node.iam_country)
 
     # Prepend the counts to the file contents
     new_file_contents = f"====================\n" \
                         f"SCHEDULE SUMMARY\n" \
-                        f"Country: {iam_country}\n" \
+                        f"Country: {node.iam_country}\n" \
                         f"Best EU score: {best_eu_score}\n" \
                         f"Node count: {node_count}\n" \
                         f"Schedule count: {schedule_count}\n" \
                         f"TRANSFORM count: {transform_count}\n" \
                         f"TRANSFER count: {transfer_count}\n" \
+                        f"Population: {iam_country['Population']}\n" \
+                        f"Electronics: {iam_country['Electronics']}\n" \
+                        f"MetallicElements: {iam_country['MetallicElements']}\n" \
+                        f"MetallicAlloys: {iam_country['MetallicAlloys']}\n" \
+                        f"Housing: {iam_country['Housing']}\n" \
+                        f"Timber: {iam_country['Timber']}\n" \
                         f"====================\n"
 
     # Open the file for writing and overwrite the contents

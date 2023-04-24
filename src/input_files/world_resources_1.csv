@@ -1,10 +1,10 @@
 resource,weight
 Population,0.5
-MetallicElements,0.6
-Timber,0.1
-MetallicAlloys,0.4
-Electronics,0.9
-Housing,0.1
+MetallicElements,0.5
+Timber,0.5
+MetallicAlloys,0.5
+Electronics,1.0
+Housing,0.5
 HousingWaste,-0.2
 MetallicAlloysWaste,-0.2
 ElectronicsWaste,-0.6

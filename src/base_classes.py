@@ -34,7 +34,8 @@ class WorldState:
 
 
 class Node:
-    def __init__(self, parent_node, world_state, action, your_country_name, node_count_id, frontier_max_size):
+    def __init__(self, parent_node, world_state, action, your_country_name,
+                 node_count_id, frontier_max_size, transfer_target_country=None):
         self.iam_country = your_country_name    # name of country the agent plays
         self.parent_node = parent_node          # parent Node to start
         self.world_state = world_state          # instantiated WorldState class
@@ -42,6 +43,7 @@ class Node:
         self.child_node_list = []               # list of child nodes under current parent_node
         self.node_id = node_count_id            # keep track of the node count and use as an ID
         self.frontier_max_size = frontier_max_size  # currently not used; potentially for tiers on resource decay
+        self.transfer_target_node = self.create_transfer_target_node()  # append target country
         self.resource_decay()                   # check resource decay based on the current node_id
 
     def __lt__(self, child_node):
@@ -62,6 +64,24 @@ class Node:
         Helper method to insert child node into list
         """
         self.child_node_list.append(child_node)
+
+    def create_transfer_target_node(self, transfer_target_country=None):
+        """
+        Helper method to insert child node into list
+        """
+        if transfer_target_country:
+            transfer_target_node = Node(parent_node=self.parent_node,
+                                        world_state=self.world_state,
+                                        action=self.action,
+                                        your_country_name=transfer_target_country,
+                                        node_count_id=self.node_id + 1,
+                                        frontier_max_size=self.frontier_max_size,
+                                        transfer_target_country=None
+                                        )
+            return transfer_target_node
+
+        else:
+            return None
 
     def resource_decay(self):
         """
