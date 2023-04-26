@@ -51,6 +51,7 @@ def write_file(output_file, output_string):
 
 def write_summary_file(output_file, best_eu_score, schedule_count, node_count, node):
     """
+    FIXED 5, see notable updates 5
     Utility function to summarize the schedules on the finalized output file
     """
     # Open the file for reading
@@ -148,7 +149,7 @@ def stringify_schedule(node, schedule_count, node_id_count, current_depth, eu_sc
 
 def plot_results(output, output_file):
     """
-    FIXED 3, see notes 3
+    FIXED 5, see notable updates 5
     Utility function to plot the best schedule
     """
     x = [i for i in range(len(output))]

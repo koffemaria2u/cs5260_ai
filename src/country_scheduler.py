@@ -10,6 +10,7 @@ def country_scheduler(your_country_name, resources_filename, initial_state_filen
 
     logger.info("Reading csv files...")
     country_list = read_file(file_path=initial_state_filename, file_type="country")
+    # FIXED 2, see notable updates #2
     resource_list = read_file(file_path=resources_filename, file_type="resource")
 
     logger.info(f"Initializing World State countries from file: \n {country_list} ")

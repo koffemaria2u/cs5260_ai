@@ -216,6 +216,7 @@ class WorldSearch:
 
     def gbfs_search(self):
         """
+        FIXED 1, see notable updates #1
         Greedy Best First Search algorithm
             source: https://www.youtube.com/watch?v=dv1m3L6QXWs
         """
@@ -235,7 +236,7 @@ class WorldSearch:
                 continue
 
             # check the current score against the best score found so far
-            # FIXED 1, see notes #1
+            # FIXED 3, see notable updates #3
             if current_node.iam_country == self.iam_country:
                 self.evaluate_best_score(eu_score=eu_score, current_node=current_node)
 
@@ -243,7 +244,7 @@ class WorldSearch:
             child_node_successors = self.create_child_nodes(parent_node=current_node)
             self.successor_child_count += len(child_node_successors)
 
-            # FIXED 2: randomize templates, see notes #2
+            # FIXED 4: randomize templates, see notable updates #4
             random.shuffle(child_node_successors)
 
             # evaluate EU scores all children nodes generated
@@ -301,8 +302,7 @@ class WorldSearch:
         for template in transform_templates:
             # create a set of variables to denote the current world state, country list, transform actions
             world_country_clone_transform = world_state_parent.copy_world_state()
-            # FIXED 1, see notes #1; we only care about the self country, in this case NCR
-            # current_country_transform = world_country_clone_transform.country_list[0] # this works
+            # FIXED 3, see notable updates #3
             current_country_transform = world_country_clone_transform.get_country(self.iam_country)
             action_transform = TransformTemplate(current_country_transform, template)
 

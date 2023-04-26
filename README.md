@@ -18,6 +18,36 @@ For the required project submission documents, see dir: [submission_files/part2]
 
 For part 1, see [submission_files/part1](submission_files/part1).
 
+
+### Part 2 Notable Updates
+#### Fixes from Part 1:
+1. Correct implementation of [Greedy Best First Search](https://github.com/koffemaria2u/cs5260_ai/blob/d95cb854dee1a95465383d6495b7720df8e529fc/src/world_search.py#L217) 
+using PriorityQueue.
+   - Pointing out that [inverting EU scores is correct](https://github.com/koffemaria2u/cs5260_ai/blob/part2/src/world_search.py#L226) 
+   in my original part 1 implementation.
+2. Removed human intuition from [resource weights](src/input_files/world_resources_1.csv).
+3. Fixed a bug from on the Transform template was doing unnecessary looping for all countries, but [we only care about 
+Transforms of the `self.country`](https://github.com/koffemaria2u/cs5260_ai/blob/part2/src/world_search.py#L304). 
+As a result on `evaluate_best_score()`, we only need to evaluate the EU score of our own self country.
+4. [Shuffling of child nodes](https://github.com/koffemaria2u/cs5260_ai/blob/d95cb854dee1a95465383d6495b7720df8e529fc/src/world_search.py#L246) before being evaluated for their EU scores.
+5. Add [plots](https://github.com/koffemaria2u/cs5260_ai/blob/d95cb854dee1a95465383d6495b7720df8e529fc/src/util.py#L149) 
+and [summary schedules](https://github.com/koffemaria2u/cs5260_ai/blob/d95cb854dee1a95465383d6495b7720df8e529fc/src/util.py#L52)
+for more efficient analysis.
+
+#### New features:
+1. [Random encounters](https://github.com/koffemaria2u/cs5260_ai/blob/part2/src/base_classes.py#L211) on applied on 
+Transfer template to add more uncertainty on this action with a chance for both positive or negative effects.
+2. A [chance to recycle](https://github.com/koffemaria2u/cs5260_ai/blob/d95cb854dee1a95465383d6495b7720df8e529fc/src/base_classes.py#L392) 
+applied during Transform templates to recover a small percentage of raw resources used.
+3. Increased complexity of [State Quality](https://github.com/koffemaria2u/cs5260_ai/blob/part2/src/world_search.py#L470)
+by adding a cap on `Electronics` to satisfy a country's population and slightly increasing a priority for population `Housing`. 
+4. A [concept of entropy](https://github.com/koffemaria2u/cs5260_ai/blob/part2/src/base_classes.py#L86) is implemented 
+in the form of decaying resources using tiers of node count as the timestep.
+5. Implemented two new search strategies to the game, [Heuristic Depth First Search](https://github.com/koffemaria2u/cs5260_ai/blob/part2/src/world_search.py#L97)
+and [Breadth First Search](https://github.com/koffemaria2u/cs5260_ai/blob/part2/src/world_search.py#L162).
+
+
+
 ## Country Search Scheduler
 ### State Quality
 [Fallout](https://fallout.fandom.com/wiki/Fallout_2) is based on a post-apocalyptic world, 
