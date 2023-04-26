@@ -1,0 +1,1075 @@
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 1
+Node ID: 6
+Depth: 1
+Expected Utility Score: 10.050125208594007
+Population: 80
+Electronics: 130
+MetallicElements: 49
+MetallicAlloys: 37
+Housing: 16
+Timber: 45
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 2
+Node ID: 13
+Depth: 2
+Expected Utility Score: 12.748974177597132
+Population: 80
+Electronics: 130
+MetallicElements: 49
+MetallicAlloys: 45
+Housing: 16
+Timber: 36
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 3
+Node ID: 18
+Depth: 3
+Expected Utility Score: 20.71168099163121
+Population: 80
+Electronics: 130
+MetallicElements: 58
+MetallicAlloys: 45
+Housing: 16
+Timber: 29
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 4
+Node ID: 22
+Depth: 4
+Expected Utility Score: 27.038844486179848
+Population: 80
+Electronics: 130
+MetallicElements: 65
+MetallicAlloys: 45
+Housing: 16
+Timber: 25
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 5
+Node ID: 35
+Depth: 7
+Expected Utility Score: 38.40635603178876
+Population: 80
+Electronics: 130
+MetallicElements: 66
+MetallicAlloys: 46
+Housing: 16
+Timber: 41
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 6
+Node ID: 40
+Depth: 8
+Expected Utility Score: 44.16612798679891
+Population: 80
+Electronics: 130
+MetallicElements: 78
+MetallicAlloys: 46
+Housing: 16
+Timber: 33
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 7
+Node ID: 51
+Depth: 10
+Expected Utility Score: 54.343800257207384
+Population: 80
+Electronics: 130
+MetallicElements: 68
+MetallicAlloys: 68
+Housing: 16
+Timber: 39
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired Timber 18
+    SanFrancisco acquired MetallicElements 10)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicAlloys 22
+    SanFrancisco acquired Timber 12)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 8
+Node ID: 65
+Depth: 12
+Expected Utility Score: 57.97591003123478
+Population: 80
+Electronics: 130
+MetallicElements: 78
+MetallicAlloys: 52
+Housing: 16
+Timber: 59
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired Timber 18
+    SanFrancisco acquired MetallicElements 10)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicAlloys 22
+    SanFrancisco acquired Timber 12)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 10
+    Arroyo acquired Timber 7)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 9
+Node ID: 73
+Depth: 13
+Expected Utility Score: 65.09162945612475
+Population: 80
+Electronics: 130
+MetallicElements: 98
+MetallicAlloys: 52
+Housing: 16
+Timber: 48
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired Timber 18
+    SanFrancisco acquired MetallicElements 10)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicAlloys 22
+    SanFrancisco acquired Timber 12)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 10
+    Arroyo acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicElements 20
+    SanFrancisco acquired Timber 11)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 10
+Node ID: 81
+Depth: 14
+Expected Utility Score: 69.70501838709811
+Population: 80
+Electronics: 132
+MetallicElements: 98
+MetallicAlloys: 65
+Housing: 16
+Timber: 38
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired Timber 18
+    SanFrancisco acquired MetallicElements 10)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 10
+    Arroyo acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicElements 20
+    SanFrancisco acquired Timber 11)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 13
+    NewReno acquired Timber 10)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 11
+Node ID: 88
+Depth: 15
+Expected Utility Score: 72.14596995715247
+Population: 80
+Electronics: 132
+MetallicElements: 110
+MetallicAlloys: 65
+Housing: 16
+Timber: 32
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired Timber 18
+    SanFrancisco acquired MetallicElements 10)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicAlloys 22
+    SanFrancisco acquired Timber 12)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 10
+    Arroyo acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicElements 20
+    SanFrancisco acquired Timber 11)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 13
+    NewReno acquired Timber 10)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 6)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 12
+Node ID: 116
+Depth: 17
+Expected Utility Score: 74.40614942006985
+Population: 80
+Electronics: 132
+MetallicElements: 109
+MetallicAlloys: 69
+Housing: 16
+Timber: 38
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired Timber 18
+    SanFrancisco acquired MetallicElements 10)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicAlloys 22
+    SanFrancisco acquired Timber 12)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicElements 20
+    SanFrancisco acquired Timber 11)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 13
+    NewReno acquired Timber 10)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicAlloys 21
+    SanFrancisco acquired MetallicElements 15)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 26
+    Arroyo acquired MetallicAlloys 17)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 13
+Node ID: 540
+Depth: 20
+Expected Utility Score: 77.73571878364365
+Population: 80
+Electronics: 132
+MetallicElements: 115
+MetallicAlloys: 65
+Housing: 16
+Timber: 37
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired Timber 18
+    SanFrancisco acquired MetallicElements 10)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicAlloys 22
+    SanFrancisco acquired Timber 12)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 10
+    Arroyo acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicElements 20
+    SanFrancisco acquired Timber 11)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicElements 17
+    SanFrancisco acquired MetallicAlloys 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicAlloys 22
+    Arroyo acquired Timber 11)
+)
+]
+====================
+Self Country: NewCaliforniaRepublic
+Schedule Num: 14
+Node ID: 548
+Depth: 20
+Expected Utility Score: 78.86291324705465
+Population: 80
+Electronics: 132
+MetallicElements: 115
+MetallicAlloys: 72
+Housing: 16
+Timber: 33
+====================
+[
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 8
+    NewReno acquired Timber 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 9
+    NewReno acquired Timber 7)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 7
+    NewReno acquired Timber 4)
+)
+(TRANSFORM Alloy NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 24
+    Arroyo acquired MetallicElements 13)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicElements 15
+    Arroyo acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicElements 12
+    NewReno acquired Timber 8)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired Timber 18
+    SanFrancisco acquired MetallicElements 10)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired Timber 27
+    Arroyo acquired MetallicAlloys 16)
+)
+(TRANSFORM Housing NewCaliforniaRepublic
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFORM Electronics NewCaliforniaRepublic
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicElements 20
+    SanFrancisco acquired Timber 11)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and SanFrancisco 
+    (NewCaliforniaRepublic acquired MetallicElements 17
+    SanFrancisco acquired MetallicAlloys 9)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and Arroyo 
+    (NewCaliforniaRepublic acquired MetallicAlloys 22
+    Arroyo acquired Timber 11)
+)
+(TRANSFER BETWEEN NewCaliforniaRepublic and NewReno 
+    (NewCaliforniaRepublic acquired MetallicAlloys 7
+    NewReno acquired Timber 4)
+)
+]
+====================
+SCHEDULE SUMMARY
+Country: NewCaliforniaRepublic
+Best EU score: 78.86291324705465
+Node count: 10007
+Schedule count: 15
+TRANSFORM count: 45
+TRANSFER count: 111
+Population: 80
+Electronics: 132
+MetallicElements: 115
+MetallicAlloys: 72
+Housing: 17
+Timber: 33
+====================

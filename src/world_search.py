@@ -47,14 +47,14 @@ class WorldSearch:
         self.search_type = search_type          # indicates search type to be used
         self.frontier = self.init_frontier()    # sets up the frontier
         self.best_node_eu = (0, root_node)  # to start, the best node is the root/parent node
-        self.best_schedule_list = []
+        self.best_schedule_list = []        # keep the best schedule, used for plotting
         self.final_schedule = "["    # empty schedule string, to be populated with schedules with the best EU scores
         self.schedule_count = 1     # keeps track of the count of schedules
         self.current_depth = 1      # keeps track of the current depth of search tree
         self.successor_child_count = 0    # keeps track of the count of successor child nodes
         self.node_count_id = root_node.node_id  # keeps track of node count and use as an ID; includes root node
-        self.world_population = self.compute_world_resource("Population")   # currently unused
-        self.world_electronics = self.compute_world_resource("Electronics") # currently unused
+        # self.world_population = self.compute_world_resource("Population")   # currently unused
+        # self.world_electronics = self.compute_world_resource("Electronics") # currently unused
 
     def compute_world_resource(self, resource_type):
         """
@@ -322,12 +322,12 @@ class WorldSearch:
 
             child_nodes.append(child_node)
 
-        # TODO 4/17 temp remove electronics from trading
+        # only allowed to barter with raw resources
         transfer_resources = ["MetallicElements", "Timber", "MetallicAlloys",
                               # "Electronics"
                               ]
 
-        # set a random percentage between 10% to 30% for transferring resources
+        # set a random percentage between 10% to 20% for transferring resources
         transfer_percentage = random.uniform(0.1, 0.2)
 
         # similar to previous loop, but for resources
@@ -413,13 +413,9 @@ class WorldSearch:
             x_self = self.discounted_reward(node)
             x_target = self.discounted_reward(node.transfer_target_node)
 
-            # TODO 4/23 play with constants to get %s
-            exponent_self = (-K * (x_self - X_0))
-            power_self = math.e ** exponent_self
-            exponent_target = (-K * (x_target - X_0))
-            power_target = math.e ** exponent_target
-            schedule_success_probability_self_country = float(L / 1 + power_self)
-            schedule_success_probability_target_country = float(L / 1 + power_target)
+            # P(sch_j)
+            schedule_success_probability_self_country = L / 1 + np.exp(-K * (x_self - X_0))
+            schedule_success_probability_target_country = L / 1 + np.exp(-K * (x_target - X_0))
 
             # P(sch_j)
             pre_res = schedule_success_probability_self_country * schedule_success_probability_target_country

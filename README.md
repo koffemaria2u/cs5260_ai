@@ -9,10 +9,60 @@ by: Kevin Offemaria
 The project requirements and relevant information are found in the directory: 
 [project_reqs](project_reqs).
 
-For the required project submission documents, see dir: [submission_files](submission_files).
-- `test_cases_summary.pdf`
-- `talk_slides.pptx`
-- `video_link.txt`
+### Part 2 Submission Files
+For the required project submission documents, see dir: [submission_files/part2](submission_files/part2).
+- `test_cases_summary_part2.pdf`
+- `country-sched-architecture.jpg`
+- `talk_slides_part2.pptx`
+- `video_link_part2.txt`
+
+For part 1, see [submission_files/part1](submission_files/part1).
+
+## Country Search Scheduler
+### State Quality
+[Fallout](https://fallout.fandom.com/wiki/Fallout_2) is based on a post-apocalyptic world, 
+and Electronics as a whole is considered to be it's the most valued produced resource.
+Intrinsically, Electronics can be defined as anything from radios, automobiles, firearms, etc. 
+
+In terms of the State Quality definition, a country values its happiness according to how much `Electronics` it 
+currently owns. Therefore, its State Quality measure is the count of the amount of available Electronics.
+Since Electronics is a produced resource, there is value in having the necessary raw materials to produce them though
+it would still need resources and time to produce them. This continuity of production is counted towards the SQ
+score but with a 50% penalty. All of these are reflected in the [resource weights](src/input_files/world_resources_1.csv)
+There is a cap on Electronics against the country's population assumed at a 2:1 ratio of Electronics per person.
+If a country has more Electronics against its own population, we penalize Electronics, MetallicElements, MetallicAlloys.
+This is necessary to shift focus on other resources that may potentially increase population satisfaction 
+such as `Housing`, which has an increased role in EU contribution. We assume the optimal ratio of persons to a house is
+4:1, or 4 persons per single house. A bonus to this resource is applied to incentivize building houses to accommodate
+a country's population. However, just like Electronics, once the limit goes above the ratio a penalty will be applied
+to discourage building unnecessary houses for a satisfied population. 
+
+Finally, there is a small bonus applied to recycling `ElectronicsWaste` due to the scarcity of resources in the
+barren wasteland. We assume [~17% of e-waste is recycled](https://www.genevaenvironmentnetwork.org/resources/updates/the-growing-environmental-risks-of-e-waste/) contributing positively to EU score.
+ 
+
+[Logistic function](https://en.wikipedia.org/wiki/Logistic_function) constants:
+- `x` is the input or independent variable
+- `L` is the maximum value of the function
+- `k` is the logistic growth rate or steepness of the curve
+- `x_0` is the x-value of the sigmoid's midpoint
+
+
+### Search Algorithm
+There are 3 search functions that can be used in the program: Greedy Best First Search, Heuristic Depth First Search, 
+Breadth First Search. GBFS utilizes the PriorityQueue class from the Python library, queue, as the storage frontier. 
+While the others use the built-in Python List object. The algorithm of all three functions is generally the same
+whereby they start with a root node inserted into the frontier and generate children nodes based on a root 
+or parent node. It then attempts to generate Action Templates for TRANSFORMs and TRANSFERs. 
+The resource values for the current node’s country are modified by the Action. The new child nodes are randomly 
+shuffled and appended to the frontier. Next, the Expected Utility score on the current node is calculated
+and evaluated against the best scoring EU node. If so, replace the best EU node with the current node, 
+and write all the Action Templates for all parent nodes of the current node. The program ends when the maximum depth, 
+or frontier size has been exceeded, or the frontier is empty. See diagram below.
+
+
+#### Country Schedule Architecture
+![alt text](submission_files/part2/country-sched-architecture.jpg "arch")
 
 ## Usage
 ### Installation
@@ -42,29 +92,56 @@ python src/country_scheduler.py
   --resource-file src/input_files/world_resources_1.csv
   --state-file src/input_files/world_state_1.csv
   --output-file src/output_files/bfs_results
-  --num-schedules 10
-  --depth-bound 10
-  --frontier-size 5000
+  --search_type gbfs # choices=["bfs", "hdfs", "gbfs"]
+  --num-schedules 20
+  --depth-bound 20
+  --frontier-size 10000
   --loglevel INFO
 ```
 
-## Around the repo
+### Around the repo
 1. Test Results are found in the [output_files](src/output_files)
    - The last few characters of the file name indicate the test case and iteration (eg. `bfs_res...test1a.txt`)
 2. Initial states are found in [input_files](src/input_files)
+3. Main program in `src/` dir
+   - entrypoint: `country_scheduler.py`
+4. `submission_files/` contain the summary files as advised the project requirements.
 
+### Directory Structure
+```
+├── project_reqs
+│   ├── Part1
+│   ├── Part2
+├── src
+│   ├── input_files
+│   │   ├── world_resources_1.csv
+│   │   ├── world_state_1.csv
+│   ├── output_files
+│   │   ├── result_graphs
+│   │   ├── result_plots
+│   ├── base_classes.py
+│   ├── country_scheduler.py
+│   ├── world_search.py
+│   ├── util.py
+├── submission_files
+│   ├── part1
+│   ├── part2
+├── README.md
+├── README_notes.md
+├── requirements.txt 
+└── .gitignore
+```
 
-## Presentation Notes
-1. At first, I embedded the `ActionTransfer` functions (now a class) into the WorldSearch. But realized it could be too
-tightly coupled, and figured I could use this on its own somehow on Part 2 of the project.
-2. Adding a hardcoded transfer percentage of up to 20% of resources
-   - this would cause uneven trades if 1 resource is much higher than the other
-   - to balance, add a check that resources for transfer shouldn't be > 200% both ways
-3. higher COST_OF_FAILURE lead to finding_best nodes in deeper depths
+## Citations
+Class community citations:
+- John Ford – Concept of [Resource decay](https://piazza.com/class/lbpfjbrwi0ca3/post/22)
+- Karely Rodriguez – Proper implementation of [HDFS, alpha-beta pruning](https://github.com/karelyrodri/AI_Virtual_World/blob/main/Search_Strategies/HeuristicDepthFirstSearch.py#L34)
 
-### Notes
-Logical function variables:
-- `x` is the input or independent variable
-- `L` is the maximum value of the function
-- `k` is the steepness of the curve
-- `x_0` is the x-value of the sigmoid's midpoint
+Online citations:
+- [E-waste recycling](https://www.genevaenvironmentnetwork.org/resources/updates/the-growing-environmental-risks-of-e-waste/)
+- [Fallout Random Encounters](https://fallout.fandom.com/wiki/Fallout_2_random_encounters)
+- [Greedy Best First Search](https://www.youtube.com/watch?v=dv1m3L6QXWs)
+- [Depth First Search](https://www.youtube.com/watch?v=pcKY4hjDrxk&t=730s)
+- [Breadth First Search](https://www.youtube.com/watch?v=pcKY4hjDrxk&t=252s)
+- [Metals deterioration](https://xapps.xyleminc.com/Crest.Grindex/help/grindex/contents/Metals.htm)
+- [Timber decay](https://www.fs.usda.gov/research/treesearch/7717)
