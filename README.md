@@ -13,7 +13,7 @@ The project requirements and relevant information are found in the directory:
 For the required project submission documents, see dir: [submission_files/part2](submission_files/part2).
 - `test_cases_summary_part2.pdf`
 - `country-sched-architecture.jpg`
-- `talk_slides_part2.pptx`
+- `CS5260_AI_koffemaria_part2.pptx`
 - `video_link_part2.txt`
 
 For part 1, see [submission_files/part1](submission_files/part1).
@@ -91,8 +91,12 @@ and write all the Action Templates for all parent nodes of the current node. The
 or frontier size has been exceeded, or the frontier is empty. See diagram below.
 
 
-#### Country Schedule Architecture
+### Country Schedule Architecture
 ![alt text](submission_files/part2/country-sched-architecture.jpg "arch")
+
+
+#### Test Case Results
+Test Case Results can be found [here](src/output_files/result_graphs).
 
 ## Usage
 ### Installation
