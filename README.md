@@ -179,3 +179,64 @@ Online citations:
 - [Breadth First Search](https://www.youtube.com/watch?v=pcKY4hjDrxk&t=252s)
 - [Metals deterioration](https://xapps.xyleminc.com/Crest.Grindex/help/grindex/contents/Metals.htm)
 - [Timber decay](https://www.fs.usda.gov/research/treesearch/7717)
+
+
+## Professor Feedback
+Grade: 92
+
+1. I appreciate that you took the Part 1 comments and critiques and really did a good job of addressing each of 
+the issues...each of the items of concern looks much better in this submission, so thank you for taking the time to 
+address those. I hope that in making some of those changes, you were able to see an improvement in your agent's 
+behavior and understand why they were needed.
+2. In your updated State Quality function, you say that the value is penalized if it goes above a certain ratio 
+threshold...how is this penalization encoded (i.e., is it still a continuous function where the maximum value of the 
+function is located at the target ratio, or is this a discontinuity whereby after the target ratio is reached, the state
+quality suddenly jumps to a lesser or negative value)? Hint: continuous is always better, oftentimes even required.
+3. You still keep referring to many of your choices as "incentivizing the AI to XXX", where XXX is something like 
+"search through transfers instead of transforms"...this submission is much better than Part 1 at keeping your human 
+intuition out of it, but it seems like you are still trying to push your AI to behave in a certain way and/or 
+certain order. Remember, the purpose of AI is NOT to make the AI behave in the same way as a human...it's for it to 
+come up with logical actions based on a desired goal/outcome. I know those two statements sound similar, but 
+they're not saying the same thing. In your specific case, you shouldn't care at all HOW your agent ends up increasing 
+its EU (i.e., what actions it takes in what order), the ONLY thing you are trying to do is to ensure that at the 
+end of the day, your agent has come up with a world state that is "good" based on your state quality function. 
+If you ever catch yourself thinking "I'd like to incentive my AI to ....", then whatever you're about to do is 
+probably not going to have the intended effect and will also remove much of the "intelligence" part of the AI.
+4. I like your Greedy Best-First Search results...the shape of the outcome for the EU values seems reasonable 
+(with some significant growth up front that seems to lead to diminishing returns later on). And your explanation 
+of why GBFS tends to lead to higher EU values very quickly is spot-on.
+5. I also really enjoyed seeing the comparison of GBFS for your two country initial states...it was cool that 
+they were both able to get up to similar final EU values although in very different ways...neat result and analysis. 
+Your explanation of why you sometimes see big jumps in EU also makes sense to me based on the randomness of the 
+trade percentage in your implementation. I actually think this is a good implementation detail (since it allows 
+your AI to search different parts of the search space randomly without any guidance or intuition), and I think that 
+if you had been able to continue searching to much deeper depths (like hundreds or thousands), this detail would 
+have been a huge factor in ensuring that your AI is able to continue improving its EU pretty substantially over a 
+significant period of time.
+6. In your "resource decay" explanation, you mention that it is tiered based on node count (and you mention many 
+thousands of nodes in each tier). Why are you using node count for resource decay vs. node depth? If I'm correct in 
+assuming that node count is equal to the number of nodes that have been added to the frontier, then I'm not sure 
+that this metric makes sense...this would penalize actions that get added to the frontier at a later time, even if 
+they are only ACTUALLY the second or third action that would be present in a schedule, for example. 
+Resource decay shouldn't have to do with the length of your search, but rather the length of your schedule.
+7. Good analysis of the limitations of Heuristic-DFS, this is always problematic when using this search strategy 
+on very large/infinite search spaces.
+8. I also like your analysis of the limitation of the Breadth-First Search strategy - from your results, it 
+looks like it was JUST starting to begin an exponentially increasing growth rate in EU, so it would have been very 
+interesting to see what EU values it was able to find if it could have searched to say a depth of 100 
+(vs. a similar depth using Greedy Best-First Search). You hit the nail on the head on why BFS is rarely used for 
+problems like this with large branching factors, but nonetheless, BFS does guarantee that the actually optimal 
+solution will be found (if you had infinite resources and time), so it's cool to compare these results to 
+Greedy Best-First Search just to see how much of a tradeoff there is for gaining speed vs optimality.
+9. The little extra features you added to your agent are really cool (EcoWaste recycling, randomness of 
+action choice, etc.)!
+10. One note, alpha-beta pruning definitely does NOT add human intuition to the agent. The only thing alpha-beta 
+pruning does is to remove paths from the search tree that are GUARANTEED to be worse than something that has 
+already been explored. And it does this in a mathematically sound way (with no knowledge of the meaning behind 
+what it's doing).
+11. Very good explanation during your Test Cases summary. I think you've made a ton of progress in this course 
+and especially since project Part 1. The only thing that you still try to do is to guide your AI in certain ways 
+that aren't advisable, but I think you'll be able to overcome this with more exposure and practice. It's definitely 
+not a natural thing to program in this way, but you've made GREAT progress!
+12. By the way, thank you so much for adding the links in the GitHub repo that go to specific areas in your code. 
+This was super helpful to see exactly what you were referring to in your presentation.
