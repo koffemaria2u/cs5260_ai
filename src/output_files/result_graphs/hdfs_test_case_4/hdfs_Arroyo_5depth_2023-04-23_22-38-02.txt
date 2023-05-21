@@ -1,0 +1,338 @@
+====================
+Self Country: Arroyo
+Schedule Num: 1
+Node ID: 7
+Depth: 1
+Expected Utility Score: 10.050125208594007
+Population: 30
+Electronics: 4
+MetallicElements: 150
+MetallicAlloys: 131
+Housing: 4
+Timber: 165
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+]
+====================
+Self Country: Arroyo
+Schedule Num: 2
+Node ID: 61
+Depth: 5
+Expected Utility Score: 11.435092104579729
+Population: 30
+Electronics: 6
+MetallicElements: 145
+MetallicAlloys: 130
+Housing: 4
+Timber: 165
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+(TRANSFORM Alloy Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFORM Electronics Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+]
+====================
+Self Country: Arroyo
+Schedule Num: 3
+Node ID: 67
+Depth: 5
+Expected Utility Score: 13.1107238732679
+Population: 30
+Electronics: 8
+MetallicElements: 142
+MetallicAlloys: 128
+Housing: 4
+Timber: 165
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+(TRANSFORM Alloy Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFORM Electronics Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFORM Electronics Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+]
+====================
+Self Country: Arroyo
+Schedule Num: 4
+Node ID: 73
+Depth: 5
+Expected Utility Score: 17.373091950509604
+Population: 30
+Electronics: 6
+MetallicElements: 122
+MetallicAlloys: 130
+Housing: 4
+Timber: 188
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+(TRANSFORM Alloy Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFORM Electronics Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 23
+    SanFrancisco acquired MetallicElements 23)
+)
+]
+====================
+Self Country: Arroyo
+Schedule Num: 5
+Node ID: 78
+Depth: 5
+Expected Utility Score: 18.69208610050366
+Population: 30
+Electronics: 6
+MetallicElements: 145
+MetallicAlloys: 118
+Housing: 4
+Timber: 178
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+(TRANSFORM Alloy Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFORM Electronics Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 13
+    SanFrancisco acquired MetallicAlloys 12)
+)
+]
+====================
+Self Country: Arroyo
+Schedule Num: 6
+Node ID: 138
+Depth: 5
+Expected Utility Score: 19.953616335268308
+Population: 30
+Electronics: 4
+MetallicElements: 147
+MetallicAlloys: 103
+Housing: 5
+Timber: 188
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+(TRANSFORM Alloy Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFORM Housing Arroyo
+    (INPUTS  (Population 5)
+             (Metallic Elements 1)
+             (Timber 5)
+             (Metallic Alloys 3)
+    )
+    (OUTPUTS (Housing 1)
+             (Housing Waste 1)
+    )
+)
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 28
+    SanFrancisco acquired MetallicAlloys 26)
+)
+]
+====================
+Self Country: Arroyo
+Schedule Num: 7
+Node ID: 227
+Depth: 5
+Expected Utility Score: 21.706679871686575
+Population: 30
+Electronics: 4
+MetallicElements: 148
+MetallicAlloys: 112
+Housing: 4
+Timber: 187
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+(TRANSFORM Alloy Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 22
+    SanFrancisco acquired MetallicAlloys 20)
+)
+]
+====================
+Self Country: Arroyo
+Schedule Num: 8
+Node ID: 252
+Depth: 5
+Expected Utility Score: 23.830225721080648
+Population: 30
+Electronics: 6
+MetallicElements: 145
+MetallicAlloys: 110
+Housing: 4
+Timber: 187
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+(TRANSFORM Alloy Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 2)
+    )
+    (OUTPUTS (Metallic Alloys 1)
+             (Metallic Alloys Waste 1)
+    )
+)
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 22
+    SanFrancisco acquired MetallicAlloys 20)
+)
+(TRANSFORM Electronics Arroyo
+    (INPUTS  (Population 1)
+             (Metallic Elements 3)
+             (Metallic Alloys 2)
+    )
+    (OUTPUTS (Electronics 2)
+             (ElectronicsWaste 1)
+    )
+)
+]
+====================
+Self Country: Arroyo
+Schedule Num: 9
+Node ID: 465
+Depth: 5
+Expected Utility Score: 24.467525591047153
+Population: 30
+Electronics: 4
+MetallicElements: 132
+MetallicAlloys: 106
+Housing: 4
+Timber: 203
+====================
+[
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 15
+    SanFrancisco acquired MetallicAlloys 19)
+)
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired MetallicElements 27
+    SanFrancisco acquired MetallicAlloys 25)
+)
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 17
+    SanFrancisco acquired MetallicElements 24)
+)
+(TRANSFER BETWEEN Arroyo and SanFrancisco 
+    (Arroyo acquired Timber 21
+    SanFrancisco acquired MetallicElements 21)
+)
+]
+====================
+SCHEDULE SUMMARY
+Country: Arroyo
+Best EU score: 24.467525591047153
+Node count: 8887
+Schedule count: 10
+TRANSFORM count: 14
+TRANSFER count: 17
+Population: 30
+Electronics: 4
+MetallicElements: 132
+MetallicAlloys: 106
+Housing: 4
+Timber: 203
+====================
